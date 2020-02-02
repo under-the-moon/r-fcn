@@ -8,7 +8,7 @@ class Config(object):
         self.anchors_num = 9
         # 不包含背景的类别数
         self.classes_num = 20
-        # 位置维度
+        # 位置维度 roipooling后的特征大小
         self.k = 3
         # dropout
         self.keep_prob = .5
