@@ -56,6 +56,7 @@ class RRoiPooling(Layer):
         # 然后对list中的tesor各个位置上的值相加并求平均
         sensitive_features = tf.add_n(features) / len(features)
         # (N, self._last_dim)
+        # 这里可以理解为进行投票 所有值想加得到类别概率
         output = tf.reduce_mean(sensitive_features, axis=[1, 2])
         output = tf.expand_dims(output, axis=0)
         return output
