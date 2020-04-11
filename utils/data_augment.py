@@ -35,7 +35,7 @@ class DataAugment(object):
             # 水平翻转后就不垂直翻转
             if self._vertical_flip and flip > 0.5:
                 img = cv2.flip(img, 0)
-                gt_boxes[:, [1, 3]] = width - gt_boxes[:, [3, 1]]
+                gt_boxes[:, [1, 3]] = height - gt_boxes[:, [3, 1]]
             # 是否旋转90度
             rotate_angle_flip = np.random.rand()
             if self._rotate_angle and rotate_angle_flip < 0.5:
