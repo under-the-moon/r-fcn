@@ -89,11 +89,11 @@ def save_weights(rpn_model, rfcn_model):
 epoch_length = voc_train_data.sample_nums
 num_epochs = 10
 train_step = 0
-iter_num = 0
 losses = np.zeros((epoch_length, 4))
 best_loss = 100000
 
 for epoch_num in range(num_epochs):
+    iter_num = 0
     # keras progress bar
     progbar = Progbar(epoch_length)
     print('Epoch {}/{}'.format(epoch_num + 1, num_epochs))
